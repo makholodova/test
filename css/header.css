@@ -13,25 +13,22 @@
 }
 
 .ticker {
-  height: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  white-space: nowrap;
 }
 
 .ticker__track {
   display: flex;
-  gap: 40px;
   width: max-content;
-  animation: ticker 18s linear infinite;
+  animation: ticker 20s linear infinite;
 }
 
 .ticker__group {
   display: flex;
   gap: 28px;
-  white-space: nowrap;
-  color: var(--muted);
-  font-size: 12px;
+  padding-right: 28px;
+  min-width: 100vw;
+  flex-shrink: 0;
 }
 
 @keyframes ticker {
