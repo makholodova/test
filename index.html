@@ -66,7 +66,8 @@
     </nav>
 
     <div class="actions">
-      <button class="btn btn--primary btn--desktop" type="button">Оставить заявку</button>
+
+      <button class="btn btn--primary btn--desktop" type="button" data-open-modal="contact">Связаться</button>
       <button class="burger" id="burger" type="button"  aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -88,7 +89,7 @@
         <a class="mobile-link" href="#">Отзывы</a>
         <a class="mobile-link" href="#">О нас</a>
         <a class="mobile-link" href="#">Контакты</a>
-        <button class="mobile-cta" type="button">Оставить заявку</button>
+        <button type="button" class="mobile-cta" data-open-modal="contact">Связаться</button>
       </div>
   </div>
 </header>
@@ -110,12 +111,25 @@
   </div>
 </main>
 
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="container">
     <strong>Футер</strong>
     <p>Контент</p>
   </div>
 </footer>
+
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__overlay" data-modal-close></div>
+
+  <div class="modal__dialog" role="dialog" aria-modal="true" >
+    <button class="modal__close" type="button" data-modal-close>×</button>
+    <h2 class="modal__title" id="modalTitle"></h2>
+    <div class="modal__body" id="modalBody">
+    </div>
+  </div>
+</div>
+
 <script src="js/header.js" defer></script>
 <script src="js/modal.js" defer></script>
 </body>
