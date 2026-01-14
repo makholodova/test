@@ -195,6 +195,10 @@
   border-radius: 12px;
   padding: 10px 14px;
 }
+.btn[disabled] {
+  opacity: .55;
+  cursor: not-allowed;
+}
 
 .btn--primary {
   background: #7c3aed;
@@ -274,6 +278,10 @@
   cursor: pointer;
   margin-top: 10px;
   transition: background 0.3s ease, color .3ms ease;
+}
+.mobile-cta[disabled] {
+  opacity: .55;
+  cursor: not-allowed;
 }
 
 .mobile-cta:hover {

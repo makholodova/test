@@ -211,7 +211,10 @@
       if (!validateForm()) return;
 
       const isRequest = form.hasAttribute('data-request-form');
-      if (isRequest) setFormSent();
+      if (isRequest) {
+        setFormSent();
+        updateContactButtons();
+      }
 
       bodyEl.innerHTML = `
         <div class="form">
@@ -223,4 +226,20 @@
 
     validateForm();
   }
+
+  function updateContactButtons() {
+    const buttons = document.querySelectorAll('[data-open-modal="contact"]');
+    if (!buttons.length) return;
+
+    buttons.forEach(btn => {
+      if (isFormSent()) {
+        btn.disabled = true;
+        btn.classList.add('is-disabled');
+        btn.setAttribute('aria-disabled', 'true');
+
+        btn.textContent = 'Заявка отправлена';
+      }
+    });
+  }
+  updateContactButtons();
 })();

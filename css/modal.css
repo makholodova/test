@@ -89,10 +89,7 @@
 }
 
 
-.btn[disabled] {
-  opacity: .55;
-  cursor: not-allowed;
-}
+
 
 @media (max-width: 520px) {
   .modal__overlay {
