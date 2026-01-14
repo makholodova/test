@@ -1,0 +1,360 @@
+﻿.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--line);
+}
+
+.header--top {
+  top: 0;
+  height: var(--top-h);
+  background: #070a0f;
+}
+
+.ticker {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: ticker 18s linear infinite;
+}
+
+.ticker__group {
+  display: flex;
+  gap: 28px;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.header--mid {
+  z-index: 5;
+  top: var(--top-h);
+  height: var(--mid-h);
+  background: #0b1120;
+  transition: transform .3s ease;
+}
+
+.header--mid.is-hidden {
+  transform: translateY(-100%);
+}
+
+.link {
+  color: var(--muted);
+ transition: color .3ms ease;
+}
+
+.link:hover {
+
+  color: var(--text);
+}
+
+
+.midbar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.header--main {
+  top: calc(var(--top-h) + var(--mid-h));
+  background: rgba(18, 24, 39, .92);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.header--main.is-hidden {
+  transform: translateY(calc(-1 * var(--mid-h)));
+}
+
+.mainbar {
+  height: var(--main-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.logo__mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #7c3aed;
+}
+
+.logo__text {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.nav--desktop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav__link {
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, .06);
+  color: var(--text);
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__btn {
+  border: 0;
+  background: transparent;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.dropdown__btn:hover {
+  background: rgba(255, 255, 255, .06);
+  color: var(--text);
+}
+
+.dropdown__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 220px;
+  padding: 10px;
+  background: #0b1120;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .35);
+  display: none;
+}
+
+.dropdown.is-open .dropdown__panel {
+  display: block;
+}
+
+.dropdown__panel a {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.dropdown__panel a:hover {
+  background: rgba(255, 255, 255, .06);
+  color: var(--text);
+
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.btn--primary {
+  background: #7c3aed;
+  transition: background 0.3s ease;
+}
+
+.btn--primary:hover {
+  filter: brightness(1.05);
+}
+
+.icon-btn {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .03);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .03);
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: rgba(255, 255, 255, .90);
+  border-radius: 2px;
+  margin: 5px 0;
+}
+
+.mobile-menu { padding: 14px 16px 18px;
+  border-top: 1px solid var(--line);
+  background: #0b1120;
+}
+
+.mobile-menu__section {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, .02);
+}
+
+.mobile-link {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: var(--text);
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.mobile-link:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.mobile-cta {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .03);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.mobile-cta:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.mobile-acc {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 10px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.mobile-acc:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.mobile-acc__panel {
+  padding: 6px 8px 8px;
+}
+
+.mobile-acc__panel a {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: var(--muted);
+  transition: background 0.3s ease, color .3ms ease;
+}
+
+.mobile-acc__panel a:hover {
+  background: rgba(255, 255, 255, .06);
+  color: var(--text);
+}
+
+.footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  background: #070a0f;
+}
+
+@media (max-width: 780px) {
+ .nav--desktop {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+   .btn--desktop {
+    display: none;
+  }
+
+  .icon-btn--mobile {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --main-h: 60px;
+    --mid-h: 38px;
+  }
+
+  .logo {
+    min-width: unset;
+  }
+
+  .logo__text {
+    display: none;
+  }
+}

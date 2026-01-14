@@ -4,7 +4,9 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <title>Тестовое: модалки + шапка + витрина</title>
-  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 <div class="header header--top">
@@ -31,11 +33,66 @@
 
 <div class="header header--mid" id="midHeader">
   <div class="container midbar">
-    <span>Город</span>
-    <a href="tel:8-800-888-88-88">8-800-888-88-88</a>
+    <a class="link" href="#">Город</a>
+    <a class="link" href="tel:8-800-888-88-88">8-800-888-88-88</a>
   </div>
 </div>
 
+
+
+
+<header class="header header--main" id="mainHeader">
+  <div class="container mainbar">
+    <a class="logo" href="#" >
+      <span class="logo__mark"></span>
+      <span class="logo__text">Shop</span>
+    </a>
+
+    <nav class="nav nav--desktop">
+      <div class="dropdown" data-dropdown>
+        <button class="dropdown__btn" type="button" aria-expanded="false">
+          Каталог
+          <span>▾</span>
+        </button>
+        <div class="dropdown__panel" >
+          <a href="#" >Смартфоны</a>
+          <a href="#" >Ноутбуки</a>
+          <a href="#" >Бытовая техника</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav__link">Отзывы</a>
+      <a href="#" class="nav__link">О нас</a>
+      <a href="#" class="nav__link">Контакты</a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn btn--primary btn--desktop" type="button">Оставить заявку</button>
+      <button class="burger" id="burger" type="button"  aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="mobile-menu__section">
+        <button class="mobile-acc" type="button" data-acc aria-expanded="false">
+          Каталог <span>▾</span>
+        </button>
+        <div class="mobile-acc__panel" hidden>
+          <a href="#">Смартфоны</a>
+          <a href="#">Ноутбуки</a>
+          <a href="#">Бытовая техника</a>
+        </div>
+
+        <a class="mobile-link" href="#">Отзывы</a>
+        <a class="mobile-link" href="#">О нас</a>
+        <a class="mobile-link" href="#">Контакты</a>
+        <button class="mobile-cta" type="button">Оставить заявку</button>
+      </div>
+  </div>
+</header>
 
 <main class="page">
   <div class="container">
@@ -60,6 +117,7 @@
     <p>Контент</p>
   </div>
 </footer>
-<script src="js/header.js"></script>
+<script src="js/header.js" defer></script>
+<script src="js/modal.js" defer></script>
 </body>
 </html>
