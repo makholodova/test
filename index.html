@@ -4,9 +4,10 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <title>Тестовое: модалки + шапка + витрина</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/modal.css">
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/header.css" rel="stylesheet">
+  <link href="css/modal.css" rel="stylesheet">
+  <link href="css/showcase.css" rel="stylesheet">
 </head>
 <body>
 <div class="header header--top">
@@ -20,8 +21,8 @@
         <span>• Бесплатная доставка •</span>
       </div>
 
-      <!-- Клон -->
-      <div class="ticker__group" aria-hidden="true">
+
+      <div aria-hidden="true" class="ticker__group">
         <span>• Скидки до 30% •</span>
         <span>• Бесплатная доставка •</span>
         <span>• Поддержка 24/7 •</span>
@@ -42,73 +43,76 @@
 
 <header class="header header--main" id="mainHeader">
   <div class="container mainbar">
-    <a class="logo" href="#" >
+    <a class="logo" href="#">
       <span class="logo__mark"></span>
       <span class="logo__text">Shop</span>
     </a>
 
     <nav class="nav nav--desktop">
       <div class="dropdown" data-dropdown>
-        <button class="dropdown__btn" type="button" aria-expanded="false">
+        <button aria-expanded="false" class="dropdown__btn" type="button">
           Каталог
           <span>▾</span>
         </button>
-        <div class="dropdown__panel" >
-          <a href="#" >Смартфоны</a>
-          <a href="#" >Ноутбуки</a>
-          <a href="#" >Бытовая техника</a>
+        <div class="dropdown__panel">
+          <a href="#">Смартфоны</a>
+          <a href="#">Ноутбуки</a>
+          <a href="#">Бытовая техника</a>
         </div>
       </div>
 
-      <a href="#" class="nav__link">Отзывы</a>
-      <a href="#" class="nav__link">О нас</a>
-      <a href="#" class="nav__link">Контакты</a>
+      <a class="nav__link" href="#">Отзывы</a>
+      <a class="nav__link" href="#">О нас</a>
+      <a class="nav__link" href="#">Контакты</a>
     </nav>
 
     <div class="actions">
 
-      <button class="btn btn--primary btn--desktop" type="button" data-open-modal="contact">Связаться</button>
-      <button class="burger" id="burger" type="button"  aria-expanded="false">
+      <button class="btn btn--primary btn--desktop" data-open-modal="contact" type="button">Связаться</button>
+      <button aria-expanded="false" class="burger" id="burger" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 
 
-  <div class="mobile-menu" id="mobileMenu" hidden>
-      <div class="mobile-menu__section">
-        <button class="mobile-acc" type="button" data-acc aria-expanded="false">
-          Каталог <span>▾</span>
-        </button>
-        <div class="mobile-acc__panel" hidden>
-          <a href="#">Смартфоны</a>
-          <a href="#">Ноутбуки</a>
-          <a href="#">Бытовая техника</a>
-        </div>
-
-        <a class="mobile-link" href="#">Отзывы</a>
-        <a class="mobile-link" href="#">О нас</a>
-        <a class="mobile-link" href="#">Контакты</a>
-        <button type="button" class="mobile-cta" data-open-modal="contact">Связаться</button>
+  <div class="mobile-menu" hidden id="mobileMenu">
+    <div class="mobile-menu__section">
+      <button aria-expanded="false" class="mobile-acc" data-acc type="button">
+        Каталог <span>▾</span>
+      </button>
+      <div class="mobile-acc__panel" hidden>
+        <a href="#">Смартфоны</a>
+        <a href="#">Ноутбуки</a>
+        <a href="#">Бытовая техника</a>
       </div>
+
+      <a class="mobile-link" href="#">Отзывы</a>
+      <a class="mobile-link" href="#">О нас</a>
+      <a class="mobile-link" href="#">Контакты</a>
+      <button class="mobile-cta" data-open-modal="contact" type="button">Связаться</button>
+    </div>
   </div>
 </header>
 
 <main class="page">
-  <div class="container">
-    <h1>Контент страницы</h1>
-    <p>Скроль вниз — средняя полоска должна прятатьсяняя закреплены.Скроль вниз — средняя полоска должна прятаться. Верхняя и нижняя закреплены.</p>
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase__head">
+        <h2 class="showcase__title">Витрина техники</h2>
 
-    <h1>Контент страницы</h1>
-    <p>Скроль вниз — средняя полоска должна прятатьсяняя закреплены.Скроль вниз — средняя полоска должна прятаться. Верхняя и нижняя закреплены.</p>
+        <div class="filter" id="filter">
+          <button class="chip is-active" data-filter="all" type="button">Все</button>
+          <button class="chip" data-filter="laptop" type="button">Ноутбуки</button>
+          <button class="chip" data-filter="smartphone" type="button">Смартфоны</button>
+          <button class="chip" data-filter="appliance" type="button">Бытовая техника</button>
+        </div>
+      </div>
+      <div class="grid" id="cardsGrid"></div>
+      <p class="showcase__empty" hidden id="emptyState">Ничего не найдено.</p>
+    </div>
+  </section>
 
-    <h1>Контент страницы</h1>
-    <p>Скроль вниз — средняя полоска должна прятатьсяняя закреплены.Скроль вниз — средняя полоска должна прятаться. Верхняя и нижняя закреплены.</p>
-
-    <h1>Контент страницы</h1>
-    <p>Скроль вниз — средняя полоска должна прятатьсяняя закреплены.Скроль вниз — средняя полоска должна прятаться. Верхняя и нижняя закреплены.</p>
-    <div class="filler"></div>
-  </div>
 </main>
 
 <footer class="footer" id="footer">
@@ -119,18 +123,19 @@
 </footer>
 
 
-<div class="modal" id="modal" aria-hidden="true">
+<div aria-hidden="true" class="modal" id="modal">
   <div class="modal__overlay" data-modal-close></div>
 
-  <div class="modal__dialog" role="dialog" aria-modal="true" >
-    <button class="modal__close" type="button" data-modal-close>×</button>
+  <div aria-modal="true" class="modal__dialog" role="dialog">
+    <button class="modal__close" data-modal-close type="button">×</button>
     <h2 class="modal__title" id="modalTitle"></h2>
     <div class="modal__body" id="modalBody">
     </div>
   </div>
 </div>
 
-<script src="js/header.js" defer></script>
-<script src="js/modal.js" defer></script>
+<script defer src="js/header.js"></script>
+<script defer src="js/modal.js"></script>
+<script defer src="js/showcase.js"></script>
 </body>
 </html>

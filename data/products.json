@@ -1,0 +1,66 @@
+﻿[
+  {
+    "id": 1,
+    "type": "smartphone",
+    "title": "iPhone 15",
+    "desc": "6.1\", камера 48 МП",
+    "price": 89990
+  },
+  {
+    "id": 2,
+    "type": "smartphone",
+    "title": "Samsung Galaxy S24",
+    "desc": "AMOLED, быстрый экран",
+    "price": 99990
+  },
+  {
+    "id": 3,
+    "type": "smartphone",
+    "title": "Xiaomi Redmi Note 13",
+    "desc": "Лучший баланс цены",
+    "price": 24990
+  },
+  {
+    "id": 4,
+    "type": "laptop",
+    "title": "MacBook Air M2",
+    "desc": "Лёгкий, автономный",
+    "price": 139990
+  },
+  {
+    "id": 5,
+    "type": "laptop",
+    "title": "ASUS Zenbook 14",
+    "desc": "Тонкий, хороший дисплей",
+    "price": 119990
+  },
+  {
+    "id": 6,
+    "type": "laptop",
+    "title": "Lenovo ThinkPad T14",
+    "desc": "Надёжный для работы",
+    "price": 159990
+  },
+
+  {
+    "id": 7,
+    "type": "appliance",
+    "title": "Холодильник LG DoorCooling+",
+    "desc": "No Frost, инверторный компрессор",
+    "price": 84990
+  },
+  {
+    "id": 8,
+    "type": "appliance",
+    "title": "Стиральная машина Bosch Serie 6",
+    "desc": "Загрузка 8 кг, тихая работа",
+    "price": 69990
+  },
+  {
+    "id": 9,
+    "type": "appliance",
+    "title": "Пылесос Dyson V11",
+    "desc": "Беспроводной, высокая мощность",
+    "price": 59990
+  }
+]
